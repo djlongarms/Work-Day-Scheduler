@@ -12,7 +12,9 @@ for(let i = 9; i <= 17; i++) {
   block.innerHTML = `
     <div class="col-sm-1 hour">${((i - 1) % 12) + 1}AM</div>
     <textArea class="col-sm-10"></textArea>
-    <div class="col-sm-1 saveBtn"></div>
+    <div class="col-sm-1 saveBtn">
+      <i class="fa fa-save"></i>
+    </div>
   `
 
   // Checks if the current time-block is in the past, present, or future and adds a class accordingly
