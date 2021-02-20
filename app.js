@@ -16,8 +16,8 @@ for(let i = 0; i <= 8; i++) {
   block.innerHTML = `
     <div class="col-sm-1 hour">${((i + 8) % 12) + 1}AM</div>
     <textArea class="col-sm-10"></textArea>
-    <div class="col-sm-1 saveBtn">
-      <i class="fa fa-save"></i>
+    <div class="col-sm-1 saveBtn ">
+      <i class="fa fa-save save"></i>
     </div>
   `
 
@@ -44,7 +44,7 @@ for(let i = 0; i <= 8; i++) {
 // Listens for a click on the save icon in a saveBtn element
 document.addEventListener('click', event => {
   // Checks to ensure we have clicked the correct icon
-  if(event.target.classList.contains('fa-save')) {
+  if(event.target.classList.contains('save')) {
     // Gets the text and stores it in newEvent
     let newEvent = event.target.parentElement.parentElement.childNodes[3].value
 
