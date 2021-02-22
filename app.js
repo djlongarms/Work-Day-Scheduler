@@ -10,11 +10,21 @@ let currentEvents = JSON.parse(localStorage.getItem('currentEvents')) || []
 
 // Creates section elements for timeblocks between 9AM and 5PM
 for(let i = 0; i <= 8; i++) {
-  // Creates new section element, then adds classes and inner HTML to make the section a time-block
+  // Creates new section element, then adds classes
   let block = $('<section>')
   block.addClass("row time-block")
+
+  // Decides whether to use "AM" of "PM"
+  let timeCode = ''
+  if(i < 3) {
+    timeCode = "AM"
+  } else {
+    timeCode = "PM"
+  }
+
+  // Sets inner HTML for the block
   block.html(`
-    <div class="col-sm-1 hour">${((i + 8) % 12) + 1}AM</div>
+    <div class="col-sm-1 hour">${(((i + 8) % 12) + 1)}${timeCode}</div>
     <textArea class="col-sm-10"></textArea>
     <div class="col-sm-1 saveBtn">
       <i class="fa fa-save save"></i>
